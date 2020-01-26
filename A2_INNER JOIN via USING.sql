@@ -23,3 +23,14 @@ SELECT p1.country, p1.continent, prime_minister, president
 FROM president AS p1
 INNER JOIN prime_ministers AS p2
 USING (country);
+
+--------------------------------------
+
+-- 4. Select fields
+SELECT c.name AS country, continent, l.name AS language, official
+  -- 1. From countries (alias as c)
+  FROM countries AS c
+  -- 2. Join to languages (as l)
+  JOIN languages AS l
+    -- 3. Match using code
+    USING(code);
